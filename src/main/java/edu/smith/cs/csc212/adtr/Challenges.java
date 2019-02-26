@@ -8,14 +8,23 @@ public class Challenges {
 	// The union of two sets is the set of elements that either contains.
 	public static SetADT<Integer> union(SetADT<Integer> left, SetADT<Integer> right) {
 		SetADT<Integer> output = new JavaSet<>();
-		
+		for (Integer i : left.toList()) {
+			output.insert(i);
+		}
+		for (Integer i : right.toList()) {
+			output.insert(i);
+		}
 		return output;
 	}
 	
 	// The intersection of two sets is the set of elements that both contain.
 	public static SetADT<Integer> intersection(SetADT<Integer> left, SetADT<Integer> right) {
 		SetADT<Integer> output = new JavaSet<>();
-		
+		for (Integer i : left.toList()) {
+			if (right.contains(i)) {
+				output.insert(i);
+			}
+		}
 		return output;
 	}
 	
