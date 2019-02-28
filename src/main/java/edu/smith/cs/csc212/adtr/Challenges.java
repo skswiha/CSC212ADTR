@@ -31,7 +31,16 @@ public class Challenges {
 	// Count the words in the input list and put them in the map.
 	public static MapADT<String, Integer> wordCount(ListADT<String> words) {
 		MapADT<String, Integer> output = new JavaMap<>();
-		
+		int count;
+		for (String word : words.toJava()) {
+			count = 0;
+			for (String word2 : words.toJava()) {
+				if (word == word2) {
+					count ++;
+				}
+			}
+			output.put(word, count);
+		}
 		return output;
 	}
 }

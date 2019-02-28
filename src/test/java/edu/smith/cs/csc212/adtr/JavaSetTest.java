@@ -59,18 +59,24 @@ public class JavaSetTest {
 	@Test
 	public void testToList() {
 		SetADT<String> abc = new JavaSet<>();
+		assertEquals(abc.toList().size(), 0);
 		abc.insert("a");
+		assertEquals(abc.toList().size(), 1);
 		abc.insert("b");
 		abc.insert("c");
+		assertEquals(abc.toList().size(), 3);
 		assertEquals(abc.toList() instanceof ListADT, true);
 	}
 	
 	@Test
 	public void testToJava() {
 		SetADT<String> abc = new JavaSet<>();
+		assertEquals(abc.toJava().size(), 0);
 		abc.insert("a");
+		assertEquals(abc.toJava().size(), 1);
 		abc.insert("b");
 		abc.insert("c");
+		assertEquals(abc.toJava().size(), 3);
 		assertEquals(abc.toJava() instanceof Set, true);
 	}
 }

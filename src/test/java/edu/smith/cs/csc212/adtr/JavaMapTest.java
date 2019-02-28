@@ -56,7 +56,9 @@ public class JavaMapTest {
 	@Test
 	public void testGetKeys() {
 		MapADT<String, Integer> abc = new JavaMap<>();
+		assertEquals(abc.toJava().size(), 0);
 		abc.put("a", 1);
+		assertEquals(abc.toJava().size(), 1);
 		abc.put("b", 2);
 		abc.put("c", 3);
 		ListADT<String> list = abc.getKeys();
@@ -68,17 +70,21 @@ public class JavaMapTest {
 	@Test
 	public void testGetEntries() {
 		MapADT<String, Integer> abc = new JavaMap<>();
+		assertEquals(abc.getEntries().size(), 0);
 		abc.put("a", 1);
+		assertEquals(abc.getEntries().size(), 1);
 		abc.put("b", 2);
 		abc.put("c", 3);
-		ListADT<Pair<String, Integer>> list = abc.getEntries();
-		assertEquals(list.size(), 3);
+		assertEquals(abc.getEntries().size(), 3);
 	}
 	public void testToJava() {
 		MapADT<String, Integer> abc = new JavaMap<>();
+		assertEquals(abc.toJava().size(), 0);
 		abc.put("a", 1);
+		assertEquals(abc.toJava().size(), 1);
 		abc.put("b", 2);
 		abc.put("c", 3);
+		assertEquals(abc.toJava().size(), 3);
 		assertEquals(abc.toJava() instanceof Map, true);
 	}
 	
